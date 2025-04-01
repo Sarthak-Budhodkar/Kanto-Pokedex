@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanto Pokédex (1-151)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pokedex">
+        <div class="pokedex-left">
+            <div class="pokedex-screen">
+                <div class="loading-indicator" id="loading-indicator">Loading...</div>
+                <div class="pokemon-display">
+                    <img id="pokemon-sprite" src="" alt="Pokemon Sprite">
+                </div>
+                <div class="pokemon-info">
+                    <h2 id="pokemon-name">Pokemon Name</h2>
+                    <p id="pokemon-id">#000</p>
+                    <div id="pokemon-types"></div>
+                    <div id="pokemon-stats"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pokedex-right">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search Pokémon...">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="pokemon-list-container">
+                <ul id="pokemon-list">
+                    <li class="list-item">Loading List...</li>
+                </ul>
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-button" class="nav-button" disabled>Previous</button>
+                <button id="next-button" class="nav-button" disabled>Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
