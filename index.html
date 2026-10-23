@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanto Pokédex (1-151)</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanto Pokédex (1-151)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="pokedex">
-        <div class="pokedex-left">
-            <div class="pokedex-screen">
-                <div class="loading-indicator" id="loading-indicator">Loading...</div>
-                <div class="pokemon-display">
-                    <img id="pokemon-sprite" src="" alt="Pokemon Sprite">
-                </div>
-                <div class="pokemon-info">
-                    <h2 id="pokemon-name">Pokemon Name</h2>
-                    <p id="pokemon-id">#000</p>
-                    <div id="pokemon-types"></div>
-                    <div id="pokemon-stats"></div>
-                </div>
-            </div>
-        </div>
-        <div class="pokedex-right">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search Pokémon...">
-                <button id="search-button">Search</button>
-            </div>
-            <div class="pokemon-list-container">
-                <ul id="pokemon-list">
-                    <li class="list-item">Loading List...</li>
-                </ul>
-            </div>
-            <div class="navigation-buttons">
-                <button id="prev-button" class="nav-button" disabled>Previous</button>
-                <button id="next-button" class="nav-button" disabled>Next</button>
-            </div>
-        </div>
+<div class="stage" id="stage">
+  <div class="dex" id="dex">
+
+    <!-- Opening cover -->
+    <div class="cover" id="cover">
+      <div class="cover-lens"><div class="shine"></div></div>
+      <div class="cover-lights"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+      <div class="cover-title">POKÉDEX</div>
+      <div class="cover-hint">Opening…  (tap to skip)</div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Left half -->
+    <section class="half left">
+      <header class="top">
+        <div class="lens"><div class="shine"></div></div>
+        <i class="dot r"></i><i class="dot y"></i><i class="dot g"></i>
+      </header>
+      <div class="screen-frame">
+        <div class="screen" id="screen">
+          <div class="boot" id="boot">POKéDEX<br><small>KANTO REGION</small></div>
+          <div class="entry-head">
+            <span id="pokemon-id">No.---</span>
+            <span id="pokemon-genus"></span>
+          </div>
+          <div class="sprite-box"><img id="pokemon-sprite" alt=""></div>
+          <h2 id="pokemon-name">---</h2>
+          <div id="pokemon-types"></div>
+          <div class="hw"><span id="pokemon-ht">HT --</span><span id="pokemon-wt">WT --</span></div>
+          <p id="pokemon-desc"></p>
+          <div id="pokemon-stats"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="btns">
+          <button id="cry-button" class="pill">CRY</button>
+          <button id="shiny-button" class="pill">SHINY</button>
+        </div>
+        <div class="dpad">
+          <button id="up-button" class="d u" aria-label="Previous">▲</button>
+          <button id="left-button" class="d l" aria-label="Back 10">◀</button>
+          <button id="right-button" class="d r" aria-label="Forward 10">▶</button>
+          <button id="down-button" class="d dn" aria-label="Next">▼</button>
+          <span class="d c"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="hinge"></div>
+
+    <!-- Right half -->
+    <section class="half right">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="SEARCH NAME / No." autocomplete="off">
+      </div>
+      <div class="list-wrap">
+        <ul id="pokemon-list"><li class="list-item">Loading…</li></ul>
+      </div>
+      <div class="foot">
+        <span id="count">151 / 151</span>
+        <span class="tip">↑ ↓ ← → keys work</span>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
